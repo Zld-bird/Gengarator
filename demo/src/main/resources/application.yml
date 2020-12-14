@@ -1,0 +1,38 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /demo
+
+spring:
+  datasource:
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      url: jdbc:log4jdbc:mysql://219.142.30.254:8795/tysprmew_dev?serverTimezone=Asia/Shanghai&amp;characterEncoding=utf8&amp;useSSL=false
+      username: tydev
+      password: QWlsp96.Adl
+      type: com.alibaba.druid.pool.DruidDataSource
+      initial-size: 3
+      min-idle: 3
+      max-active: 15
+      max-wait: 5000
+      time-between-eviction-runs-millis: 90000
+      min-evictable-idle-time-millis: 1800000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      validation-query: select 1
+  jpa:
+      properties:
+          hibernate:
+              dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+              format-sql: true
+      open-in-view: true
+      show-sql: true
+
+
+swagger:
+    enabled: true
+    basePackage: com.example.demo
+upload:
+  files:
+    base:
+      path: D:\apache-tomcat-7.0.96\webapps
